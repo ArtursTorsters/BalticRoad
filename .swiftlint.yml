@@ -1,0 +1,21 @@
+excluded:
+  - .build
+
+opt_in_rules:
+  - empty_count
+  - closure_spacing
+  - contains_over_first_not_nil
+  - toggle_bool
+
+disabled_rules:
+  - todo # allow TODO/FIXME comments while the project is young
+  - trailing_comma # trailing commas on multi-line literals keep future diffs clean
+
+line_length:
+  warning: 120
+  error: 200
+
+identifier_name:
+  min_length: 2 # allow short but meaningful names like `id`
+  excluded:
+    - id

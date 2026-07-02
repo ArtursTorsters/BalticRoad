@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:BalticRoadAtlas}",
+            "name": "Debug BalticRoadAtlas",
+            "target": "BalticRoadAtlas",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug BalticRoadAtlas"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:BalticRoadAtlas}",
+            "name": "Release BalticRoadAtlas",
+            "target": "BalticRoadAtlas",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release BalticRoadAtlas"
+        }
+    ]
+}
