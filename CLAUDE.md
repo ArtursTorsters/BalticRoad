@@ -20,12 +20,19 @@ to take or *what's nearby*, over one that duplicates existing turn-by-turn nav.
 
 **Phase 1 — core engine, no Xcode.** Xcode isn't installed yet (disk space), so
 everything is built as Swift Package Manager libraries with a CLI target
-(`BalticRoadAtlasCLI`) standing in for the app during development. Don't add
-SwiftUI/UIKit/MapKit code yet — those imports aren't available outside Xcode-managed
-targets in a meaningful way, and the CLI target should stay platform-agnostic
-(macOS + iOS) so `swift build`/`swift test` keep working from the command line.
+(`BalticRoadAtlasCLI`) standing in for the app during development.
 
-When Xcode becomes available, Phase 2 adds a SwiftUI app target that imports these
+SwiftUI and MapKit code is fine to write now — both frameworks are part of the macOS
+SDK that ships with Command Line Tools, so a `.macOS(.v14)` executable target can
+`import SwiftUI` / `import MapKit` and run as a real window via `swift run`, no Xcode
+required. What's *not* available without Xcode: the iOS SDK/simulator, Xcode's live
+Preview canvas, and UIKit. So feature code (views, view models, MapKit usage) can be
+built and manually verified via a macOS preview host now; the actual iOS app target
+and on-device/simulator behavior wait for Phase 2. Keep feature logic in library
+targets that don't hard-code macOS-only assumptions, so the same code slots into the
+iOS app later without rework.
+
+When Xcode becomes available, Phase 2 adds a real iOS app target that imports these
 packages; the CLI target can stay as a scripting/debugging tool.
 
 ## Roadmap
@@ -56,14 +63,17 @@ abstraction/testing instead.
 
 ```
 Sources/
-  SharedModels/        Road, Coordinate, SurfaceType, RoadScore — no dependencies
-  OSMClient/            Overpass API client → depends on SharedModels
-  RoadScoring/          road quality scoring engine → depends on SharedModels
-  CamperEngine/         camper POIs, amenity filtering → depends on SharedModels
-  HistoricalRoutes/     Baltic Way waypoints/dataset → depends on SharedModels
-  BalticRoadAtlasCLI/   CLI entry point wiring the above together
+  SharedModels/          Road, Coordinate, SurfaceType, RoadScore — no dependencies
+  OSMClient/             Overpass API client → depends on SharedModels
+  RoadScoring/           road quality scoring engine → depends on SharedModels
+  CamperEngine/          camper POIs, amenity filtering → depends on SharedModels
+  HistoricalRoutes/      Baltic Way waypoints/dataset → depends on SharedModels
+  MapFeature/            map screen (View + ViewModel) → depends on SharedModels (once it needs Road data)
+  BalticRoadAtlasCLI/    CLI entry point wiring the above together
+  BalticRoadAtlasPreview/  macOS window that hosts Feature views for manual
+                           verification without Xcode (see "Previewing" below)
 Tests/
-  <Target>Tests/        one test target per library target
+  <Target>Tests/         one test target per library target
 ```
 
 Keep `SharedModels` dependency-free — every other module depends on it, so pulling in
@@ -72,10 +82,23 @@ target under `Sources/`, mirroring an existing one, with a matching `Tests/*Test
 target — don't grow `BalticRoadAtlasCLI` into a dumping ground for logic that belongs
 in a library target.
 
-Once the SwiftUI app exists, `Features/` (Map, RoadScore, Camper, Reports,
-HistoricalRoutes, Navigation, Search, Settings) will sit alongside these packages and
-import them; `Core/`, `Shared/`, `Networking/`, `Database/` follow standard iOS-app
-conventions at that point.
+Feature libraries (`MapFeature` and whatever follows it — RoadScore, Camper, Reports,
+HistoricalRoutes, Search, Settings) already live under `Sources/` today, each its own
+SwiftUI-capable target following View → ViewModel → Service → Model. Once Xcode is
+available, the real iOS app target imports these directly — it composes them (tab bar,
+navigation) rather than owning their internals. `Core/`, `Shared/`, `Networking/`,
+`Database/` follow standard iOS-app conventions at that point, for genuinely
+app-shell-only concerns (app entry point, cross-feature navigation).
+
+## Previewing without Xcode
+
+SwiftUI and MapKit both work as plain macOS code (see "Current phase" above).
+`BalticRoadAtlasPreview` is a throwaway executable target that hosts one Feature view
+in a phone-shaped, resizable window so you can see it: `swift run BalticRoadAtlasPreview`.
+When adding a new Feature view, wire it into `BalticRoadAtlasPreviewApp.swift` instead
+of building a new preview host each time. This only proves the view builds and lays out
+correctly on macOS — it doesn't substitute for checking on iOS once Xcode exists
+(no iOS chrome, no touch gestures, no on-device quirks).
 
 ## Conventions
 

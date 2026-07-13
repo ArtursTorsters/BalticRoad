@@ -1,4 +1,5 @@
 // swift-tools-version: 6.0
+// just like package .json
 import PackageDescription
 
 let package = Package(
@@ -13,7 +14,9 @@ let package = Package(
         .library(name: "RoadScoring", targets: ["RoadScoring"]),
         .library(name: "CamperEngine", targets: ["CamperEngine"]),
         .library(name: "HistoricalRoutes", targets: ["HistoricalRoutes"]),
+        .library(name: "MapFeature", targets: ["MapFeature"]),
         .executable(name: "BalticRoadAtlasCLI", targets: ["BalticRoadAtlasCLI"]),
+        .executable(name: "BalticRoadAtlasPreview", targets: ["BalticRoadAtlasPreview"]),
     ],
     targets: [
         // MARK: - Core
@@ -37,6 +40,11 @@ let package = Package(
         .target(name: "HistoricalRoutes", dependencies: ["SharedModels"]),
         .testTarget(name: "HistoricalRoutesTests", dependencies: ["HistoricalRoutes"]),
 
+        // MARK: - Features (SwiftUI)
+
+        .target(name: "MapFeature"),
+        .testTarget(name: "MapFeatureTests", dependencies: ["MapFeature"]),
+
         // MARK: - CLI (temporary UI substitute until Xcode is available)
 
         .executableTarget(
@@ -48,6 +56,14 @@ let package = Package(
                 "CamperEngine",
                 "HistoricalRoutes",
             ]
+        ),
+
+        // MARK: - Preview host (macOS window for manually verifying SwiftUI
+        // features locally, without Xcode's Preview canvas or a simulator)
+
+        .executableTarget(
+            name: "BalticRoadAtlasPreview",
+            dependencies: ["MapFeature"]
         ),
     ]
 )

@@ -1,24 +1,64 @@
 {
-    "configurations": [
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:BalticRoadAtlas}",
-            "name": "Debug BalticRoadAtlas",
-            "target": "BalticRoadAtlas",
-            "configuration": "debug",
-            "preLaunchTask": "swift: Build Debug BalticRoadAtlas"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:BalticRoadAtlas}",
-            "name": "Release BalticRoadAtlas",
-            "target": "BalticRoadAtlas",
-            "configuration": "release",
-            "preLaunchTask": "swift: Build Release BalticRoadAtlas"
-        }
-    ]
+  "configurations": [
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:BalticRoadAtlas}",
+      "name": "Debug BalticRoadAtlas",
+      "target": "BalticRoadAtlas",
+      "configuration": "debug",
+      "preLaunchTask": "swift: Build Debug BalticRoadAtlas"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:BalticRoadAtlas}",
+      "name": "Release BalticRoadAtlas",
+      "target": "BalticRoadAtlas",
+      "configuration": "release",
+      "preLaunchTask": "swift: Build Release BalticRoadAtlas"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:BalticRoadAtlas}",
+      "name": "Debug BalticRoadAtlasCLI",
+      "target": "BalticRoadAtlasCLI",
+      "configuration": "debug",
+      "preLaunchTask": "swift: Build Debug BalticRoadAtlasCLI"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:BalticRoadAtlas}",
+      "name": "Release BalticRoadAtlasCLI",
+      "target": "BalticRoadAtlasCLI",
+      "configuration": "release",
+      "preLaunchTask": "swift: Build Release BalticRoadAtlasCLI"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:BalticRoadAtlas}",
+      "name": "Debug BalticRoadAtlasPreview",
+      "target": "BalticRoadAtlasPreview",
+      "configuration": "debug",
+      "preLaunchTask": "swift: Build Debug BalticRoadAtlasPreview"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:BalticRoadAtlas}",
+      "name": "Release BalticRoadAtlasPreview",
+      "target": "BalticRoadAtlasPreview",
+      "configuration": "release",
+      "preLaunchTask": "swift: Build Release BalticRoadAtlasPreview"
+    }
+  ]
 }

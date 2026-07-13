@@ -60,9 +60,11 @@ workspace: core logic first, SwiftUI app once Xcode is available. See the
 
 ### Folder structure
 
-Each `Sources/<Name>` folder is an independent library package; `Tests/<Name>Tests`
-holds its tests. `SharedModels` has no dependencies — every other package depends on
-it, never the other way round.
+Each `Sources/<Name>` folder is its own target — a library (testable, reusable code:
+`SharedModels`, `OSMClient`, `RoadScoring`, `CamperEngine`, `HistoricalRoutes`,
+`MapFeature`) or an executable (`BalticRoadAtlasCLI`, `BalticRoadAtlasPreview`).
+`Tests/<Name>Tests` holds a library's tests. `SharedModels` has no dependencies —
+every other library depends on it, never the other way round.
 
 ```
 BalticRoadAtlas/
@@ -90,15 +92,24 @@ BalticRoadAtlas/
 │   ├── HistoricalRoutes/           # the Baltic Way feature
 │   │   └── BalticWayRoute.swift      # historical waypoints along the 1989 Baltic Way
 │   │
-│   └── BalticRoadAtlasCLI/         # temporary stand-in for the SwiftUI app
-│       └── main.swift                # entry point — run with `swift run BalticRoadAtlasCLI`
+│   ├── MapFeature/                 # the map screen (View + ViewModel, MVVM)
+│   │   ├── MapView.swift             # SwiftUI view: an interactive MapKit map
+│   │   └── MapViewModel.swift        # holds the map's camera state
+│   │
+│   ├── BalticRoadAtlasCLI/         # temporary stand-in for the SwiftUI app
+│   │   └── main.swift                # entry point — run with `swift run BalticRoadAtlasCLI`
+│   │
+│   └── BalticRoadAtlasPreview/     # dev tool: see Feature views without Xcode
+│       ├── BalticRoadAtlasPreviewApp.swift  # entry point — `swift run BalticRoadAtlasPreview`
+│       └── PhoneFrame.swift                 # wraps a view at iPhone size + bezel
 │
 └── Tests/
     ├── SharedModelsTests/
     ├── OSMClientTests/
     ├── RoadScoringTests/
     ├── CamperEngineTests/
-    └── HistoricalRoutesTests/
+    ├── HistoricalRoutesTests/
+    └── MapFeatureTests/
 ```
 
 ## Getting started
