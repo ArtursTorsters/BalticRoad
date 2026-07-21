@@ -32,6 +32,58 @@ overnight, refill water, find a toilet, or see something interesting along the w
 
 See [CLAUDE.md](../CLAUDE.md) for architecture, conventions, and current build status.
 
+## User flow (planned)
+
+**Status check first:** right now only the bare map screen exists in code (no real
+road data on it yet — that's issue #15). Everything below is the *target* flow the
+GitHub issues are already scoped against, not something built yet. Treat this as the
+map for where each issue slots in, not a description of current behavior.
+
+Design decision this flow encodes: **no login wall.** The app opens straight to the
+map and is fully usable with zero account — browsing roads, scores, and camper info
+needs nothing. Login/Register only interrupts the flow at the two moments an account
+is actually required: submitting a community report, and syncing progress/profiles
+across devices. This matches how auth is already scoped in the issue tracker (Phase 2,
+tied to Community Reports + Supabase) rather than being a separate, earlier gate.
+
+```mermaid
+flowchart TD
+    Launch([App Launch]) --> Map["Map / Home <br/><small>issue #1</small>"]
+
+    Map --> RoadTap[Tap a road]
+    RoadTap --> RoadDetail["Road Score detail <br/><small>issue #3</small>"]
+
+    Map --> VehicleProfile["Vehicle Profile picker <br/><small>issue #2</small>"]
+    VehicleProfile --> Map
+
+    Map --> CamperToggle["Toggle Camper Mode <br/><small>issue #4</small>"]
+    CamperToggle --> CamperPOITap[Tap a camper POI]
+    CamperPOITap --> POIDetail[POI detail: amenities]
+
+    Map --> BalticWayEntry["Baltic Way route <br/><small>issue #5</small>"]
+    BalticWayEntry --> CheckpointTap[Tap a checkpoint]
+    CheckpointTap --> CheckpointDetail[Checkpoint detail: trivia, photos]
+    BalticWayEntry --> RouteComplete{Route fully driven?}
+    RouteComplete -->|yes, signed in| BadgeSynced["Freedom Driver badge <br/><small>issue #48</small>"]
+    RouteComplete -->|yes, not signed in| AuthPromptBadge[Login / Register]
+    AuthPromptBadge --> BadgeSynced
+
+    Map --> ReportTap["Report an issue <br/><small>issue #6</small>"]
+    ReportTap --> AuthCheck{Signed in?}
+    AuthCheck -->|yes| ReportSubmitted[Report submitted]
+    AuthCheck -->|no| AuthPromptReport[Login / Register]
+    AuthPromptReport --> ReportSubmitted
+
+    Map --> Settings[Settings]
+    Settings --> AccountSettings["Sign in / manage account <br/><small>issue #44</small>"]
+```
+
+`Login / Register` itself isn't a dead end on this diagram — it's a modal/sheet that
+appears in front of whatever the user was doing, then returns them to it. Note also
+that `Settings` doesn't have a dedicated GitHub issue yet (it was in the original
+folder-structure sketch but never broken out) — worth creating one whenever it's
+actually next in line.
+
 ## Data sources
 
 - **OpenStreetMap** (via the Overpass API) — roads, surface types, smoothness, parking,
