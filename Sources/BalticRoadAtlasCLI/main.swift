@@ -21,7 +21,7 @@ struct BalticRoadAtlasCLI {
         )
 
         let score = RoadScoreCalculator().score(for: a6)
-        print("\(a6.name): score \(score.value)/10 (confidence: \(score.confidence))")
+        print("\(a6.name ?? "Unnamed road"): score \(score.value)/10 (confidence: \(score.confidence))")
 
         let campsite = CamperPOI(
             id: "poi-1",

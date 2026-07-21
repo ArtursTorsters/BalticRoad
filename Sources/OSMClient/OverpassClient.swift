@@ -33,4 +33,12 @@ public struct OverpassClient: Sendable {
         }
         return data
     }
+
+    /// Fetches every road inside the given region, decoded into our own
+    /// Road model — the entry point the rest of the app should use.
+    public func fetchRoads(in box: BoundingBox) async throws -> [Road] {
+        let data = try await run(query: RoadQuery.roadsInBoundingBox(box))
+        let response = try JSONDecoder().decode(OverpassResponse.self, from: data)
+        return response.elements.map { $0.toRoad() }
+    }
 }
