@@ -1,0 +1,34 @@
+name: BalticRoadAtlasApp
+options:
+  bundleIdPrefix: com.balticroadatlas
+  deploymentTarget:
+    iOS: "17.0"
+
+packages:
+  BalticRoadAtlas:
+    path: ..
+
+targets:
+  BalticRoadAtlasApp:
+    type: application
+    platform: iOS
+    sources: [BalticRoadAtlasApp]
+    dependencies:
+      - package: BalticRoadAtlas
+        product: SharedModels
+      - package: BalticRoadAtlas
+        product: OSMClient
+      - package: BalticRoadAtlas
+        product: RoadScoring
+      - package: BalticRoadAtlas
+        product: CamperEngine
+      - package: BalticRoadAtlas
+        product: HistoricalRoutes
+      - package: BalticRoadAtlas
+        product: MapFeature
+    info:
+      path: BalticRoadAtlasApp/Info.plist
+      properties:
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false

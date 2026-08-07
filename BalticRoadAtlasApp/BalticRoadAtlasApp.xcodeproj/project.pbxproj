@@ -1,0 +1,358 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A4972672DB79B1EFDA405E8 /* HistoricalRoutes in Frameworks */ = {isa = PBXBuildFile; productRef = 62AF90DD85FC5F7073E0FC10 /* HistoricalRoutes */; };
+		0AAC96D30551A681363D4C81 /* SharedModels in Frameworks */ = {isa = PBXBuildFile; productRef = 193105FB8510938D38A951FB /* SharedModels */; };
+		26734836C7A0E9B78F7408AA /* RoadScoring in Frameworks */ = {isa = PBXBuildFile; productRef = 8387FFA9E57294D55556F499 /* RoadScoring */; };
+		6DD0ECE354990744D8B2FEFC /* OSMClient in Frameworks */ = {isa = PBXBuildFile; productRef = 4E723578FBDF8E2DA1E717A9 /* OSMClient */; };
+		7AD4BA9ADDBF1A61F1E72461 /* BalticRoadAtlasAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489FEF4D4E1C10C24AE861CF /* BalticRoadAtlasAppApp.swift */; };
+		8AC99368EC5F764F997A1FC0 /* CamperEngine in Frameworks */ = {isa = PBXBuildFile; productRef = A33AD0BDA706B485ABDC4920 /* CamperEngine */; };
+		CAD529C041D0332E99C3B2F3 /* MapFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 8141CCA35DDE748642E7DAB1 /* MapFeature */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1F7BB8FA7E100BE566517327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		489FEF4D4E1C10C24AE861CF /* BalticRoadAtlasAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalticRoadAtlasAppApp.swift; sourceTree = "<group>"; };
+		9795152CFB00C8A0E0B17BA3 /* BalticRoadAtlas */ = {isa = PBXFileReference; lastKnownFileType = folder; name = BalticRoadAtlas; path = ..; sourceTree = SOURCE_ROOT; };
+		F326584DBD0F586E0603F1CC /* BalticRoadAtlasApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BalticRoadAtlasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF13964A23D7999F1959EBBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AAC96D30551A681363D4C81 /* SharedModels in Frameworks */,
+				6DD0ECE354990744D8B2FEFC /* OSMClient in Frameworks */,
+				26734836C7A0E9B78F7408AA /* RoadScoring in Frameworks */,
+				8AC99368EC5F764F997A1FC0 /* CamperEngine in Frameworks */,
+				0A4972672DB79B1EFDA405E8 /* HistoricalRoutes in Frameworks */,
+				CAD529C041D0332E99C3B2F3 /* MapFeature in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14BE5E8A2B6CF4D7246B466B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F326584DBD0F586E0603F1CC /* BalticRoadAtlasApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7520647D72548870FC771035 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				9795152CFB00C8A0E0B17BA3 /* BalticRoadAtlas */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		9A8BBAE7056AEE577F0F24D3 /* BalticRoadAtlasApp */ = {
+			isa = PBXGroup;
+			children = (
+				489FEF4D4E1C10C24AE861CF /* BalticRoadAtlasAppApp.swift */,
+				1F7BB8FA7E100BE566517327 /* Info.plist */,
+			);
+			path = BalticRoadAtlasApp;
+			sourceTree = "<group>";
+		};
+		D8FFB60E24CFEB828C50DDBF = {
+			isa = PBXGroup;
+			children = (
+				9A8BBAE7056AEE577F0F24D3 /* BalticRoadAtlasApp */,
+				7520647D72548870FC771035 /* Packages */,
+				14BE5E8A2B6CF4D7246B466B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D52C291D10C0986528F63B31 /* BalticRoadAtlasApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45FE7ACED64A764FAB0E8CD5 /* Build configuration list for PBXNativeTarget "BalticRoadAtlasApp" */;
+			buildPhases = (
+				F0A64206517E974EF569181F /* Sources */,
+				BF13964A23D7999F1959EBBB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BalticRoadAtlasApp;
+			packageProductDependencies = (
+				193105FB8510938D38A951FB /* SharedModels */,
+				4E723578FBDF8E2DA1E717A9 /* OSMClient */,
+				8387FFA9E57294D55556F499 /* RoadScoring */,
+				A33AD0BDA706B485ABDC4920 /* CamperEngine */,
+				62AF90DD85FC5F7073E0FC10 /* HistoricalRoutes */,
+				8141CCA35DDE748642E7DAB1 /* MapFeature */,
+			);
+			productName = BalticRoadAtlasApp;
+			productReference = F326584DBD0F586E0603F1CC /* BalticRoadAtlasApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94664A4A175A35F99CB26991 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = AEDA8AEAC6F29CA398B83ED5 /* Build configuration list for PBXProject "BalticRoadAtlasApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = D8FFB60E24CFEB828C50DDBF;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				081B6F7D662CEBF3EF21EDAA /* XCLocalSwiftPackageReference ".." */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 14BE5E8A2B6CF4D7246B466B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D52C291D10C0986528F63B31 /* BalticRoadAtlasApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0A64206517E974EF569181F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AD4BA9ADDBF1A61F1E72461 /* BalticRoadAtlasAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1508F73CF12922C046920E4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		24AC62994EA2287F5229523C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = BalticRoadAtlasApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.balticroadatlas.BalticRoadAtlasApp;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		73F511E83A371D5F9AF508DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = BalticRoadAtlasApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.balticroadatlas.BalticRoadAtlasApp;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9EA25C6EE251360EDC5C08D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45FE7ACED64A764FAB0E8CD5 /* Build configuration list for PBXNativeTarget "BalticRoadAtlasApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24AC62994EA2287F5229523C /* Debug */,
+				73F511E83A371D5F9AF508DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AEDA8AEAC6F29CA398B83ED5 /* Build configuration list for PBXProject "BalticRoadAtlasApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EA25C6EE251360EDC5C08D6 /* Debug */,
+				1508F73CF12922C046920E4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		081B6F7D662CEBF3EF21EDAA /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		193105FB8510938D38A951FB /* SharedModels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedModels;
+		};
+		4E723578FBDF8E2DA1E717A9 /* OSMClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OSMClient;
+		};
+		62AF90DD85FC5F7073E0FC10 /* HistoricalRoutes */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HistoricalRoutes;
+		};
+		8141CCA35DDE748642E7DAB1 /* MapFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MapFeature;
+		};
+		8387FFA9E57294D55556F499 /* RoadScoring */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RoadScoring;
+		};
+		A33AD0BDA706B485ABDC4920 /* CamperEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CamperEngine;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 94664A4A175A35F99CB26991 /* Project object */;
+}
