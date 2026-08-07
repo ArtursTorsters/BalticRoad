@@ -13,8 +13,8 @@ in [README.md](README.md).
 ## Guiding principle
 
 The app is a road intelligence companion, not a navigator replacement. When a feature
-request is ambiguous, prefer the interpretation that helps someone decide *which* road
-to take or *what's nearby*, over one that duplicates existing turn-by-turn nav.
+request is ambiguous, prefer the interpretation that helps someone decide _which_ road
+to take or _what's nearby_, over one that duplicates existing turn-by-turn nav.
 
 ## Current phase
 
@@ -48,7 +48,7 @@ behavior (real chrome, touch gestures, on-device quirks, permissions prompts).
 
 1. **Core engine** — package structure, shared models, road scoring, OSM client,
    Baltic Way dataset. Ongoing — new domain logic keeps landing here as features need it.
-2. **iOS app shell** *(current)* — real iOS app target (`BalticRoadAtlasApp/`) exists
+2. **iOS app shell** _(current)_ — real iOS app target (`BalticRoadAtlasApp/`) exists
    and runs on Simulator; map view is wired in but doesn't render real road data yet
    (`MapFeature` → `OSMClient` isn't connected — see GitHub issue #15).
 3. **Feature build-out** — Camper mode, historical routes, parking, community reports.
@@ -158,3 +158,8 @@ Bare `swiftlint` (no wrapper script) works fine now that full Xcode is installed
 selected (`xcode-select -p`) — it wasn't always: on Command Line Tools alone,
 SwiftLint can't find `sourcekitd` and crashes. If this ever regresses (e.g. Xcode
 gets deselected), that's the symptom to look for.
+
+SPM package (Sources/, Tests/) — swift build / swift test / swift run BalticRoadAtlasCLI / swift run BalticRoadAtlasPreview. Yes, run these from the repo root (/Users/arturs/Desktop/code/BalticRoadAtlas, where Package.swift lives).
+Real iOS app on Simulator — you never touch swift build for this. Just:
+
+open BalticRoadAtlasApp/BalticRoadAtlasApp.xcodeproj
