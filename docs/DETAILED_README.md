@@ -87,7 +87,12 @@ actually next in line.
 ## Data sources
 
 - **OpenStreetMap** (via the Overpass API) — roads, surface types, smoothness, parking,
-  campsites, toilets, water points, fuel stations.
+  campsites, toilets, water points, fuel stations. **Real coverage of `surface`/
+  `smoothness` tags across LV/LT/EE was measured 2026-10-11** — see
+  [docs/DATA_COVERAGE.md](DATA_COVERAGE.md). Short version: well-mapped on paved
+  roads (where it barely matters), sparse on `track`/`unclassified` (where it
+  matters most) — directly shapes how `RoadScoreCalculator` and Vehicle Profile
+  Routing (#2) need to handle missing data.
 - **Community reports** — user-submitted, becomes a proprietary dataset over time.
 - **Government open data** (future) — roadworks, closures, maintenance.
 

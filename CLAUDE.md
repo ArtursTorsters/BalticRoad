@@ -48,6 +48,10 @@ behavior (real chrome, touch gestures, on-device quirks, permissions prompts).
 
 1. **Core engine** — package structure, shared models, road scoring, OSM client,
    Baltic Way dataset. Ongoing — new domain logic keeps landing here as features need it.
+   Real OSM `surface`/`smoothness` tag coverage for LV/LT/EE was measured 2026-10-11
+   (see [docs/DATA_COVERAGE.md](docs/DATA_COVERAGE.md)) — relevant before touching
+   issue #14 (surface mapping), #16/#24 (missing-data handling), or #2/#21 (Vehicle
+   Profile Routing's untagged-road fallback behavior).
 2. **iOS app shell** _(current)_ — real iOS app target (`BalticRoadAtlasApp/`) exists
    and runs on Simulator; map view is wired in but doesn't render real road data yet
    (`MapFeature` → `OSMClient` isn't connected — see GitHub issue #15).
